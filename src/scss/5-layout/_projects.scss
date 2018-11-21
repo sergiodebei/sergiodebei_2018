@@ -1,0 +1,106 @@
+#projects, , #collaborations, #atGemini, article{
+    margin-bottom: 20px;
+    .article_image{
+        // margin-bottom: 15px;
+        background-size: cover;
+        background-position: center; 
+        display: block; 
+        .project_image{
+            .viewport{
+                -webkit-transition: background-position 5s ease;
+                -moz-transition: background-position 5s ease;
+                -ms-transition: background-position 5s ease;
+                -o-transition: background-position 5s ease;
+                transition: background-position 5s ease;
+                background-position: 0 0;
+                background-size: 100% auto;
+                overflow: hidden;
+                cursor: pointer;
+                height: 100%;
+                // &.lucisfera {
+                //     background-image: url(./img/project-lucisfera.png);
+                // }
+                // &.italo {
+                //     background-image: url(./img/project-italo.png);
+                // }
+                // &.italo_2{
+                //     background-image: url(./img/project-italo_2.png);
+                // }
+                // &.farmbrothers{
+                //     background-image: url(./img/project-farmbrothers.jpg);
+                // }
+                &:hover, &:focus{
+                    background-position: 0 100%;
+                }
+            }
+        }
+    }
+    .summery_hover{
+        overflow: hidden;
+        &:hover{
+            .article_image{
+                // -moz-transform: scale(1.3);
+                // -webkit-transform: scale(1.3);
+                // transform: scale(1.3);
+                -moz-transform: rotate(10deg) scale(1.4);
+                -webkit-transform: rotate(10deg) scale(1.4);
+                transform: rotate(10deg) scale(1.4);
+            }
+        }
+    }
+    .summary_content{
+        margin-top: 15px;
+        .summary_title{
+            font-weight: 600;
+            line-height: 20px;
+            font-size: 14px;
+            margin-bottom: 5px;
+            @include transition (.3s);
+            -webkit-transform-origin: left bottom;
+            transform-origin: left bottom;
+            &:hover{
+                -webkit-transform: skewX(-8deg);
+                transform: skewX(-8deg);
+            }
+        }
+        .summary_details{
+            font-size: 13px;
+            line-height: 23px;
+            .summary_details_time{
+                // &:after{
+                //     content: " ·";
+                //     margin: 0 4px;
+                // }
+            }
+            .summary_details_tags{
+                color: $grey;
+                opacity: 0.4; 
+            }
+        }
+        .summary_description{
+            font-size: 13px;
+            line-height: 15px;
+        }
+    }
+}
+
+#projects, #collaborations, #atGemini, #featured_posts{
+    h1{
+        & + .projects_row{
+            margin-top: 20px;
+        }
+    }
+    .projects_row, .featured{
+        justify-content: space-between;
+        article{
+            .article_image{
+                height: 250px;
+            }
+            .summary_content{
+                .summary_title{
+                    // margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}

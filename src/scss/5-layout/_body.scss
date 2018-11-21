@@ -1,0 +1,10 @@
+body {
+
+}
+
+body{
+    &.slick-open,
+    &.menu-open{
+        overflow: hidden;
+    }
+}

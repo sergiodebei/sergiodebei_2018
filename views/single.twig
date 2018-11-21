@@ -1,0 +1,54 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    <div class="container">
+        <article id="post-{{ post.ID }}" class="single_article">
+            {# <img src="{{ post.thumbnail.src|resize(1200, 300) }}"> #}
+            <div class="article_details">
+                <span class="article_details_link">Category: {{ post.category.slug }}</span>
+                <span class="article_details_link">{{ post.author.nickname }}</span>
+                <span class="article_details_date">{{post.date}}</span>
+            </div>
+            <h1 class="article_title">{{ post.title }}</h1>
+            <div class="article_body">{{post.content}}</div>
+
+            {# <ul>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+            </ul>
+
+            <div class="gallery">
+                <a href="#" class="control prev">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="control next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+                <div class="slider">
+                    <div><img src="{{post.thumbnail.src}}" alt=""></div>
+                    <div><img src="{{post.thumbnail.src}}" alt=""></div>
+                    <div><img src="{{post.thumbnail.src}}" alt=""></div>
+                </div>
+            </div>
+
+            <div class="row" id="popups">
+                <div class="col-m-3">
+                    <img src="./img/gallery1.jpg" alt="" class="popup">
+                </div>
+                <div class="col-m-3">
+                    <div class="vid htmlvid popup" style="background-image:url(./img/gallery1.jpg);" vidSrc="vid/towers.mp4" class=""></div>
+                </div>
+                <div class="col-m-3">
+                    <div class="vid youtube popup" style="background-image:url(https://i.ytimg.com/vi/tU1b1H2EWU4/mqdefault.jpg)" ytSrc="tU1b1H2EWU4" class=""></div>
+                </div>
+                <div class="col-m-3">
+                    <div class="vid vimeo popup" style="background-image:url(https://i.vimeocdn.com/video/506473859_350x200.jpg)" vimeoSrc="119287310" class=""></div>
+                </div>
+            </div> #}
+        </article>
+    </div>
+
+{% endblock %}

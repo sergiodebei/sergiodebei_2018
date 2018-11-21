@@ -1,0 +1,59 @@
+.controllers {
+    position: fixed;
+    @include transition(.3s);
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    z-index: 98;
+    bottom: 70px;
+    right: -80px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .control_single{
+        height: 40px;
+        width: 40px;
+        // background: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background: rgba(240, 240, 240, 1) url("../img/arrow_black.svg") no-repeat 50%;
+        background-size: 40% 40%;
+        @include transition (.3s);
+        &.totop{
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+        }
+        &.backto{
+            -webkit-transform: rotate(-180deg);
+            -moz-transform: rotate(-180deg);
+            -ms-transform: rotate(-180deg);
+            -o-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+        }
+        &:hover{
+            background: $mint_opacity url("../img/arrow_black.svg") no-repeat 50%;
+            background-size: 40% 40%;
+        }
+    }
+    &.visible {
+        right: 20px;
+    }
+    &.together {
+        height: 90px;
+    }
+}
+
+@media only screen and (max-width: 515px) {
+    
+    .controllers {
+        bottom: 90px; 
+    }
+
+}

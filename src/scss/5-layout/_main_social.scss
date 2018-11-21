@@ -1,0 +1,55 @@
+#main_social{
+    ul{
+        display: flex;
+        justify-content: center; 
+        padding: 5px;
+        li{
+            position: relative;
+            padding: 0px 14px;
+            @include transition (.3s);
+            .name{
+                left: 50%;
+                -webkit-transform: translate(-50%, -20px);
+                -ms-transform: translate(-50%, -20px);
+                -o-transform: translate(-50%, -20px);
+                transform: translate(-50%, -20px);
+                position: absolute;
+                width: 220px;
+                font-size: .875em;
+                top: -16px;
+                display: block;
+                text-align: center;
+                opacity: 0;
+                filter: alpha(opacity=0);
+            }
+            i{
+                padding: 0 5px;
+            }
+            &:hover,&:focus,&.magic{
+                .name{
+                    opacity: 1;
+                    color: #000000;
+                    filter: alpha(opacity=100);
+                    -webkit-transform: translate(-50%, 0);
+                    -ms-transform: translate(-50%, 0);
+                    -o-transform: translate(-50%, 0);
+                    transform: translate(-50%, 0);
+                    -webkit-transition: all .5s ease 0s;
+                    -o-transition: all .5s ease 0s;
+                    transition: all .5s ease 0s;
+                }
+            }
+            &.tohide{
+                transform: scale(0);
+                &.toshow{
+                    transform: scale(1);
+                }
+            }
+            @for $i from 1 through 2{
+                &:nth-child(#{$i}){
+                    transition-duration: #{$i}s ;
+                }
+            }
+        }
+    }
+}

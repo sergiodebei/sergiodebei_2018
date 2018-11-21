@@ -1,0 +1,138 @@
+// ------------------------------
+// Basic typography style for copy text
+// ------------------------------
+
+
+html {
+	font-size: 62.5%;
+}
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+    background-color: $white;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    font-family: $fontFamily-poppins;
+    line-height: 1.6em;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px; /* currently ems cause chrome bug misinterpreting rems on body element */
+    text-transform: none;
+    color: $not_black;
+    @media only screen and (max-width: 515px) {
+        font-size: 14px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $fontFamily-poppins;
+}
+
+// h1, h2, h3, h4, h5, h6 {
+//     margin-top: 0;
+//     margin-bottom: 4rem;
+//     font-weight: 300; 
+//     @media only screen and (max-width: 600px) {
+//         margin-bottom: 3rem;
+//     }
+// }
+
+h1 { font-size: 3.2rem; line-height: 3.2rem; letter-spacing: .2rem; }
+// h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 1.5rem; line-height: 3.2rem;  letter-spacing: .2rem; }
+// h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+// h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+// h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+  
+  /* Larger than phablet */
+@media only screen and (max-width: 620px) {
+    h1 { font-size: 2.4rem; line-height: 2.4rem }
+    // h2 { font-size: 4.2rem; }
+    // h3 { font-size: 3.6rem; }
+    // h4 { font-size: 3.0rem; }
+    // h5 { font-size: 2.4rem; }
+    // h6 { font-size: 1.5rem; }
+}
+  
+p {
+    margin-top: 0; 
+}
+
+h1{
+    text-transform: uppercase;
+    padding: 30px 0;
+    & + h3{
+        margin-top: -20px;
+        margin-bottom: 30px;
+    }
+}
+
+h3{
+    text-transform: uppercase;
+    margin: 20px 0;
+    font-weight: 400;
+}
+
+// ------------------------------
+// Basic styles for links
+// ------------------------------
+
+a {
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+p{
+    a{
+        color: $not_black;
+        box-shadow: inset 0 -3px $mint;
+        display: inline;
+        @include transition (.3s);
+        // padding-bottom: .05em;
+        // border-bottom-width: 1px;
+        // border-bottom-style: solid;
+        // border-bottom-color: rgba(0,194,207,.3);
+        &:hover,&:focus{
+            color: $mint; 
+        }
+    }
+}
+
+hr{
+    border: none;
+    position: relative;
+    &:after {
+        content: "";
+        display: block;
+        height: 20px;
+        margin: 10px auto;
+        // top: 100%;
+        top: -11px;
+        left: 0;
+        right: 0;
+        // background: -webkit-linear-gradient(225deg, $mint 15px, transparent 0) 0 15px, -webkit-linear-gradient( 315deg, $background_grey 15px, transparent 0) 0 15px;
+        // background: -o-linear-gradient(225deg, $mint 15px, transparent 0) 0 15px, -o-linear-gradient( 315deg, $background_grey 15px, transparent 0) 0 15px;
+        // background: linear-gradient(-135deg, $mint 15px, transparent 0) 0 15px, linear-gradient( 135deg, $background_grey 15px, transparent 0) 0 15px;  
+        background: -webkit-linear-gradient(135deg, $mint 12px, transparent 0) 0 12px, -webkit-linear-gradient( 45deg, $background_grey 12px, transparent 0) 0 12px;
+        background: -o-linear-gradient(135deg, $mint 12px, transparent 0) 0 12px, -o-linear-gradient( 45deg, $background_grey 12px, transparent 0) 0 12px;
+        background: linear-gradient(-45deg, $mint 12px, transparent 0) 0 12px, linear-gradient( 45deg, $background_grey 12px, transparent 0) 0 12px;
+        background-position: center center;
+        background-repeat: repeat-x;
+        background-size: 20px 20px;
+        width: 50%;
+        margin: auto; 
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    hr{
+        &:after{
+            width: 100%; 
+        }
+    }
+}
+

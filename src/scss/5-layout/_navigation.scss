@@ -1,0 +1,12 @@
+.navigation{
+    padding: 30px 0;
+    text-align: center;
+    .page-numbers{
+        &.current{
+            font-weight: bold;
+        }
+        &:hover, &:focus{
+            color: $mint; 
+        }
+    }
+}

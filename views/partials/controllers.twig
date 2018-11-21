@@ -1,0 +1,7 @@
+
+    <div class="controllers{% if not is_front_page %} together {% endif %}">
+        <a class="control_single totop" href="#0"></a>
+        {% if not is_front_page %}
+        <a class="control_single backto" href="javascript:history.go(-1)"></a>
+        {% endif %}
+    </div>

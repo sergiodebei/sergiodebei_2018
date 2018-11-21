@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -
+
+.button{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 11px 24px;
+    margin: 10px 0; 
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: $black;
+    border: 2px solid $black;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    line-height: normal;
+    @include transition (.3s);
+    background-color: $black;
+    color: $white; 
+    &:hover{
+        background-color: $white;
+        color: $black; 
+    }
+    &.button_white{
+        background-color: $white;
+        color: $black; 
+        &:hover{
+            background-color: $black;
+            color: $white; 
+        }
+    }
+    &.button_success{
+        background-color: $red;
+        border-color: $red; 
+        color: $white; 
+        &:hover{
+            background-color: $red_dark;
+            border-color: $red_dark; 
+        }
+    }
+    &.button_error{
+        background-color: $mint;
+        border-color: $mint; 
+        color: $white; 
+        &:hover{
+            background-color: $mint_dark;
+            border-color: $mint_dark; 
+        }
+    }
+}

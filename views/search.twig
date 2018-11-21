@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<section id="search_results">
+	    <div class="container">
+            <h1>{{title}}</h1>
+
+            {% if posts %}
+            
+                {% for post in posts %}
+                    {% include 'partials/post-preview.twig' %}
+                {% endfor %}
+                {% else %}
+                    <p>No results found.</p>
+
+            {% endif %}
+
+
+            {% include 'partials/searchform.twig' %}
+            {% include 'partials/recent-posts.twig' %}
+
+	    </div>
+	</section>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+.hamburger-menu{
+
+}
+
+body{
+    &.menu-open{
+        .hamburger-menu{
+
+        }
+    }
+}

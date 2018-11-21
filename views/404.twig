@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+	<section class="error-404 not-found">
+		<div class="container">
+			<h1 class="page-title">Oops! That page can&rsquo;t be found.</h1>
+			<p>It looks like nothing was found at this location. Maybe try one of the links below or a search?</p>
+
+            {% include 'partials/searchform.twig' %}
+            {% include 'partials/recent-posts.twig' %}
+
+		</div>
+	</section><!-- .error-404 -->
+
+{% endblock %}

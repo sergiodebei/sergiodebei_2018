@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="no-js legacy" {{ site.language_attributes }}><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" {{ site.language_attributes }}><!--<![endif]-->
+<head>
+    <meta charset="{{ site.charset }}" />
+
+    <title>{% if wp_title %}{{ wp_title }}{% else %}{{ site.name }}{% endif %}</title>
+
+    <meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="{{theme.link}}/assets/dev/img/favicon.png">
+    {# {% include 'partials/meta-favicons.twig' %} #}
+    {% include 'partials/gtm.twig' %}
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="{{theme.link}}/assets/dev/css/sergiodebei-main.css">
+    <script type="application/javascript" src="{{theme.link}}/assets/dev/js/sergiodebei-main.js"></script>
+
+    {{ wp_head }}
+</head>
+
+<body class="{{ body_class }}" itemscope itemtype="//schema.org/WebPage">
+
+    {% include 'partials/gtm_noscript.twig' %}
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    {% include 'partials/header.twig' %}
+
+    <main>
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    {% include 'partials/controllers.twig' %}
+    {% include 'partials/loader.twig' %}
+
+    {% include 'partials/footer.twig' %}
+
+    {{ wp_footer }}
+    {% block scripts %}{% endblock %}
+</body>
+</html>

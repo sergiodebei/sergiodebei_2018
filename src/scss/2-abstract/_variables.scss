@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Gray colors
+$white: #FFF !default;
+$black: #000 !default;
+
+// Colors
+$white: #ffffff;
+$background_grey: #f0f0f0;
+$grey: #343434;
+$black: #000000;
+$not_black: #222;
+$red: #ff6347;
+$red_dark: #e0473a;
+
+$mint: #aff4d5; //#cafbdf
+$mint_opacity: rgba(175, 244, 213, 0.8);
+
+// $mint: #56c2b4;
+// $mint_opacity: rgba(86, 194, 180, 0.8);
+
+$mint_dark: #85d9bf;
+
+$facebook: #3b5998;
+$instagram: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+$linkedin: #007BB6;
+$envelope: #8f764b;
+$twitter: #00ACED;
+$pinterest: #CB2026;
+
+
+// Fonts
+$fontFamily-poppins: 'Poppins', sans-serif !default;

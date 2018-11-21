@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+	<section id="last_post">
+	    <div class="container">
+	        <h1>LATEST POSTS</h1>
+	        <div class="row articles">
+
+            {% for post in posts %}
+                {% include 'partials/post.twig' %}
+            {% endfor %}
+
+            </div>
+            <div class="navigation">
+                <div class="alignleft"></div>
+                <div class="alignright"></div> 
+            </div>
+	    </div>
+	</section>
+
+{% endblock %}

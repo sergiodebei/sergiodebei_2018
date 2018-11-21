@@ -1,0 +1,85 @@
+#experience{
+    // margin: 20px 0;
+    .timeline{
+        // padding: 20px;
+        .timeline_event{
+            position: relative;
+            padding-left: 40px;
+            .timeline_marker{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                &:before{
+                    background: $black;
+                    border: 3px solid transparent;
+                    // border-radius: 100%;
+                    content: "";
+                    display: block;
+                    height: 15px;
+                    position: absolute;
+                    top: 4px;
+                    left: 0;
+                    width: 15px;
+                    -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    @include transition (.3s);
+                }
+                &:after{
+                    content: "";
+                    width: 3px;
+                    background: $background_grey;
+                    display: block;
+                    position: absolute;
+                    top: 30px;
+                    bottom: 0;
+                    left: 6px;
+                }
+            }
+            .timeline_event_thumbnail{
+                background: $black;
+                color: $white;
+                display: inline-block;
+                padding: 0 10px;
+                @include transition (.3s);
+            }
+            .timeline_event_description{
+                padding-bottom: 10px; 
+            }
+            &:hover, &:focus{
+                .timeline_marker{
+                    &:before{
+                        background: $mint;
+                        -moz-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                        -webkit-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                    }
+                    &:after{
+                    }
+                }
+                .timeline_event_thumbnail{
+                    background: $mint;
+                    color: $black;
+                }
+            }
+            & + .timeline_event{
+                margin-top: 10px; 
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 620px) {
+
+    #experience{
+        .timeline{
+            h3{
+                margin: 10px 0;    
+            }
+        }
+    }
+
+}

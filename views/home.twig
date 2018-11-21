@@ -1,0 +1,76 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    <section id="thisisme">
+        <img class="lazy" data-original="{{theme.link}}/assets/img/sergio_de_bei.jpg" width="2550" height="918"/>
+        <noscript><img src="{{theme.link}}/assets/img/sergio_de_bei.jpg"/></noscript>
+    </section>
+
+    <section id="aboutme">
+        <div class="container">
+            <h1 class="centerthetext wowo">about me</h1>
+            <p>{{post.content}}</p>
+            {# <p>My name is Sergio, a 34<span id="age"></span> year old freelance web developer from Italy. Three years ago I fell in love with Amsterdam and decided to stay. I create stylish responsive websites for customers that are easy to use and effective. I’m passionate about web design and clean code. When I’m not creating, implementing or developing, I can be found dancing salsa or cooking in the kitchen. For more information and inquiries don’t esitate to <a href="#main_social">contact me</a>.</p> #}
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="containertofifty">
+            <h1 class="centerthetext wowo">skills</h1>
+            <div class="thelist">
+                {% for skill in skills %}
+                    <p><b>{{skill.title}}</b> {{skill.description}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% if events %}
+    <section id="experience">
+        <div class="containertofifty">
+
+            <h1 class="centerthetext wowo">experience</h1>
+            
+            <ul class="timeline">
+            
+                {% for event in events %}
+                    <li class="timeline_event">
+                        <div class="timeline_marker"></div>
+                        <p class="timeline_event_thumbnail">{{event.when}}</p>
+                        <h3>{{event.as}}</h3>
+                        <p class="timeline_event_description">{{event.description}}</p>
+                    </li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+    </section>
+    {% endif %}
+
+    {% if work %}{% include 'partials/projects.twig' %}{% endif %}
+
+    <section id="main_social">
+        <div class="container">
+            <ul>
+                <li class="tohide">
+                    <span class="name">linkedin</span>
+                    <a href="https://nl.linkedin.com/in/sergiodebei" target="_blank">
+                        <i class="fa fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li class="tohide">
+                    <span class="name">mail</span>
+                    <a href="mailto:sergiodebei84@gmail.com">
+                        <i class="fa fa-envelope-o fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+   {# {% if post.blocks %}{% include 'partials/contentblocks.twig' %}{% endif %} #}
+
+{% endblock %}

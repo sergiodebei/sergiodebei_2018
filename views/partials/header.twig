@@ -1,0 +1,33 @@
+<header>
+	<div class="container">
+		<div class="header_inner">
+			<div class="logo_container">
+				<div class="header_branding">
+					<a href="{{site.url}}"><img src="{{theme.link}}/assets/img/logo.svg" alt="" class="header_branding_logo"></a>
+				</div>
+			</div>
+			<div class="menu_container">
+				<nav>
+					{% include "partials/menu.twig" with {'menu': menu.get_items} %}
+				</nav>
+				<ul class="header_social">
+					<li class="header_social_item">
+						<a href="https://nl.linkedin.com/in/sergiodebei" target="_blank">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li class="header_social_item">
+						<a href="mailto:sergiodebei84@gmail.com">
+							<i class="fa fa-envelope-o" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<progress value="0">
+		<div class="progress-container">
+			<span class="progress-bar"></span>
+		</div>
+	</progress> 
+</header>

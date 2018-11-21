@@ -1,0 +1,16 @@
+<article id="post-{{post.id}}" class="{{ post.class }}">
+
+	<a href="{{ post.link }}" class="article_title">
+	    <h3>{{ post.title }}</h3>
+	</a>
+
+	<div class="entry-summary">
+        {{ post.preview }}
+        {# {{ function('get_first_paragraph', post.id) }} #}
+        {# {% set paragraphs = post.content | split('</p>') %}
+        {% set firstParagraph = paragraphs[0] ~ '</p>' %} #}
+        {# {{dump(firstParagraph)}} #}
+
+	</div><!-- .entry-summary -->
+
+</article><!-- #post-## -->

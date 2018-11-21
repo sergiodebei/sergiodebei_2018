@@ -1,0 +1,319 @@
+{
+    "key": "group_5bb00eaf86af0",
+    "title": "Work",
+    "fields": [
+        {
+            "key": "field_5bb00ec8f6925",
+            "label": "Work",
+            "name": "work",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_5bb01f173ac91": {
+                    "key": "layout_5bb01f173ac91",
+                    "name": "projects",
+                    "label": "Projects",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5bb01f9d3ac93",
+                            "label": "Project",
+                            "name": "project",
+                            "type": "flexible_content",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layouts": {
+                                "5bb01fa60f0f7": {
+                                    "key": "5bb01fa60f0f7",
+                                    "name": "before_and_after",
+                                    "label": "Before and after",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5bb014088edaf",
+                                            "label": "Phase",
+                                            "name": "phase",
+                                            "type": "repeater",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "collapsed": "",
+                                            "min": 0,
+                                            "max": 0,
+                                            "layout": "row",
+                                            "button_label": "Add Phase",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_5bb014418edb0",
+                                                    "label": "Phase image",
+                                                    "name": "phase_image",
+                                                    "type": "image",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array",
+                                                    "preview_size": "thumbnail",
+                                                    "library": "all",
+                                                    "min_width": "",
+                                                    "min_height": "",
+                                                    "min_size": "",
+                                                    "max_width": "",
+                                                    "max_height": "",
+                                                    "max_size": "",
+                                                    "mime_types": ""
+                                                },
+                                                {
+                                                    "key": "field_5bb014538edb1",
+                                                    "label": "Phase title",
+                                                    "name": "phase_title",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": ""
+                                                },
+                                                {
+                                                    "key": "field_5bb014648edb2",
+                                                    "label": "Phase website",
+                                                    "name": "phase_website",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": ""
+                                                },
+                                                {
+                                                    "key": "field_5bb0146e8edb3",
+                                                    "label": "Phase time",
+                                                    "name": "phase_time",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": ""
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                "layout_5bb021fd3ac94": {
+                                    "key": "layout_5bb021fd3ac94",
+                                    "name": "first_child",
+                                    "label": "First child",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5bb022063ac95",
+                                            "label": "Phase",
+                                            "name": "phase",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "field_5bb014088edaf"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 0,
+                                            "prefix_name": 0
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                }
+                            },
+                            "button_label": "Add Project",
+                            "min": "",
+                            "max": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5bb02504fd7af": {
+                    "key": "layout_5bb02504fd7af",
+                    "name": "collaborations",
+                    "label": "Collaborations",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5bb02544fd7b1",
+                            "label": "Project",
+                            "name": "project",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "",
+                            "button_label": "Add Collaboration",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5bb02557fd7b2",
+                                    "label": "Phase",
+                                    "name": "phase",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_5bb014088edaf"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5bb025ec1300f": {
+                    "key": "layout_5bb025ec1300f",
+                    "name": "@_gemini",
+                    "label": "@ Gemini",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5bb025ec13010",
+                            "label": "Project",
+                            "name": "project",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "Add @ gemini",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5bb025ec13011",
+                                    "label": "Phase",
+                                    "name": "phase",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_5bb014088edaf"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "130"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1538273488
+}

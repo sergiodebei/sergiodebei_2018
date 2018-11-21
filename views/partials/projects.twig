@@ -1,0 +1,15 @@
+{% for project in work %}
+
+	{% if project.acf_fc_layout == 'projects' %}
+        {% include 'partials/project.twig' with { title: 'projects', id:"projects" } %}
+
+        {% elseif project.acf_fc_layout == '@_gemini' %}
+            {% include 'partials/project.twig' with { title: '@ gemini', id:"atGemini" } %}
+
+        {% elseif project.acf_fc_layout == 'collaborations' %}
+            {% include 'partials/project.twig' with { title: 'collaborations', id:"collaborations" } %}
+		
+	{% endif %}
+
+{% endfor %} 
+

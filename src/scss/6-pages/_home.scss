@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the home page of the site/application.
+// 
+
+// @import 'includes/splash.scss';
+
+body.page-home {
+    main{
+        #aboutus{
+            .row{
+                &--margintop{
+                    margin-top: 50px;
+                }
+                .button{
+                    margin-top: 30px;
+                }
+            }
+        }
+        .together{
+            margin-top: 150px;
+            img{
+                width: 100%;
+            }
+        }
+        // padding-bottom: rem-calc(110);
+    }
+    footer{
+        margin-top: 0;
+    }
+}
