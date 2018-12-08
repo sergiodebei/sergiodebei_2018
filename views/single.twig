@@ -11,29 +11,17 @@
                 <span class="article_details_date">{{post.date}}</span>
             </div>
             <h1 class="article_title">{{ post.title }}</h1>
-            <div class="article_body">{{post.content}}</div>
-
-            {# <ul>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-            </ul>
-
-            <div class="gallery">
-                <a href="#" class="control prev">
-                    <i class="fa fa-angle-left" aria-hidden="true"></i>
-                </a>
-                <a href="#" class="control next">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </a>
-                <div class="slider">
-                    <div><img src="{{post.thumbnail.src}}" alt=""></div>
-                    <div><img src="{{post.thumbnail.src}}" alt=""></div>
-                    <div><img src="{{post.thumbnail.src}}" alt=""></div>
-                </div>
+            
+            <div class="article_body">
+                {% if post.blocks %}
+                    {% include 'partials/contentblocks.twig' %}
+                {% else %}
+                    {{post.content}}
+                {% endif %}
             </div>
 
+
+            {# 
             <div class="row" id="popups">
                 <div class="col-m-3">
                     <img src="./img/gallery1.jpg" alt="" class="popup">
