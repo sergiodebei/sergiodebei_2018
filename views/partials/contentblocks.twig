@@ -1,0 +1,106 @@
+{% for block in post.blocks %}
+
+	{% if block.acf_fc_layout == 'heading' %}
+		<div class="cb cb--title">
+			<h3 class="title">{{ block.text }}</h3>
+		</div>
+
+		{% elseif block.acf_fc_layout == 'text' %}
+			<div class="cb cb--text">
+                <p>{{ block.text|wpautop }}</p>
+				{% if block.add_buttons and block.buttons|length > 0 %}
+					{% for button in block.buttons %}
+						{% if button.url_or_file == 'url' %}
+							{% if button.button_link[0].acf_fc_layout == 'internal_link' %}
+								<a href="{{ button.button_link[0].il_url }}" class="button">{{ button.button_text }}</a>
+								{% elseif button.button_link[0].acf_fc_layout == 'external_link' %}
+								<a href="{{ button.button_link[0].el_url }}" class="button" target="_blank">{{ button.button_text }}</a>
+							{% endif %}
+							
+						{% else %}
+							<a href="{{ button.button_file.url }}" target="_blank" class="button">{{ button.button_text }}</a>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+
+			</div>
+
+        {% elseif block.acf_fc_layout == 'text_text' %}
+			<div class="cb cb--columns">
+                <div class="row">
+                    <div class="col-6 col-s-12">
+						{{ block.text_left }}
+                    </div>
+                    <div class="col-6 col-s-12">
+						{{ block.text_right }}
+                    </div>
+                </div>
+            </div>
+
+        {% elseif block.acf_fc_layout == 'text_image' %}
+
+			<div class="cb cb--columns {% if block.media_alignment == 'right' %}cb--reverse{% endif %}">
+                <div class="row">
+                    <div class="col-6 col-s-12">
+						{% for media in block.media %}
+							{% if media.acf_fc_layout == 'image' %}
+								{% if media.crop_off %}
+									<img class="lazy" data-original="{{ TimberImage(media.image.sizes.large) }}" alt="{{ media.image.alt }}" />
+									<noscript><img src="{{ TimberImage(media.image.sizes.large) }}" alt="{{ media.image.alt }}" /></noscript>
+									{% else %}
+										{# <img class="lazy" data-original="{{ media.image.id|get_timber_image_src('column') }}"/>
+										<noscript><img {{ media.image.id|get_timber_image_responsive('column') }}/></noscript> #}
+										<img class="lazy" data-original="{{ TimberImage(media.image.sizes.column) }}" alt="{{ media.image.alt }}" />
+										<noscript><img src="{{ TimberImage(media.image.sizes.column) }}" alt="{{ media.image.alt }}" /></noscript>
+								{% endif %}
+							{% elseif media.acf_fc_layout == 'video' %}
+								{% include 'partials/lazy-video.twig' with { image : media.video_preview.sizes.column, video: media.video, play_white: media.video_play_white, cropx: 436, cropy: 245 } %}
+							{% endif %}
+						{% endfor %}
+                    </div>
+                    <div class="col-6 col-s-12">
+                        <h4 class="title">{{ block.title }}</h4>
+                        <p>{{ block.text }}</p>
+						{% if block.add_buttons and block.buttons|length > 0 %}
+							{% for button in block.buttons %}
+								{% if button.url_or_file == 'url' %}
+									{% if button.button_link[0].acf_fc_layout == 'internal_link' %}
+										<a href="{{ button.button_link[0].il_url }}" class="button">{{ button.button_text }}</a>
+										{% elseif button.button_link[0].acf_fc_layout == 'external_link' %}
+										<a href="{{ button.button_link[0].el_url }}" class="button" target="_blank">{{ button.button_text }}</a>
+									{% endif %}
+									
+								{% else %}
+									<a href="{{ button.button_file.url }}" target="_blank" class="button">{{ button.button_text }}</a>
+								{% endif %}
+							{% endfor %}
+						{% endif %}
+                    </div>
+                </div>
+            </div>
+
+		{% elseif block.acf_fc_layout == 'hr' %}
+			<hr>
+
+		{# TODO slider images size crop #}
+		{% elseif block.acf_fc_layout == 'slider' %}
+			{% include 'partials/slider.twig' %}
+
+		{% elseif block.acf_fc_layout == 'image_full_width' %}
+			<div class="cb cb--fullwidth">
+                <img class="lazy" data-original="{{ TimberImage(block.image.url).src }}" alt="{{block.image.alt}}" />
+                <noscript><img src="{{ TimberImage(block.image.url).src }}" alt="{{block.image.alt}}" /></noscript>
+            </div>
+
+        {% elseif block.acf_fc_layout == 'video' %}
+			<div class="cb cb--fullvideo">
+				{% include 'partials/lazy-video.twig' with { image : block.video_preview.sizes.large, video: block.video, video_description: block.video_description, play_white: block.video_play_white, cropx: 900, cropy: 500 } %}
+            </div>
+
+		{% elseif block.acf_fc_layout == 'contact_form' %}
+			{% include 'partials/contact_form.twig' %}
+
+	{% endif %}
+
+{% endfor %}
+
