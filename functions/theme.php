@@ -1,7 +1,7 @@
 <?php
 
-    // add_image_size('slider', 1400, 586, true);
-    // add_image_size('column', 437, 350, true);
+    add_image_size('slider', 1400, 586, true);
+    add_image_size('column', 437, 350, true);
     // add_image_size('event', 130, 130, true);
     // add_image_size('lightbox-preview-hor', 300, 225, true);
     // add_image_size('lightbox-preview-ver', 225, 300, true);
