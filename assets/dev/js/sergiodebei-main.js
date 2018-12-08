@@ -3286,6 +3286,23 @@ return(!i||i!==r&&!b.contains(r,i))&&(e.type=o.origType,n=o.handler.apply(this,a
 
 
 
+$(document).ready(function() {
+
+    $('body').on('click', '.lazy-video', placeLazyVideo);
+  
+  });
+  
+  function placeLazyVideo(){
+    var video = $($(this).children('.lazy-video__embed').text());
+    var autoplay = '?showinfo=0&controls=1&autoplay=1';
+    if(video.attr('src').indexOf('?') > -1) {
+      autoplay = '&showinfo=0&controls=1&autoplay=1';
+    }
+    video.attr('src', video.attr('src') + autoplay);
+    $(this).prepend(video);
+    $(this).addClass('lazy-loaded');
+  }
+  
 $(document).on("ready", function () {
 
     function initSlider(){
@@ -3295,10 +3312,13 @@ $(document).on("ready", function () {
         slider = $('.slider').slick({
             infinite: true,
             autoplay: true,
-            autoplaySpeed: 5000,
+            // autoplaySpeed: 5000,
+            autoplaySpeed: 6000000,
             speed: 2000,
             prevArrow: $('.prev'),
-            nextArrow: $('.next')
+            nextArrow: $('.next'),
+            dots: false,
+            rows: 0,
         });
 
         // $('.next').click(function() {
