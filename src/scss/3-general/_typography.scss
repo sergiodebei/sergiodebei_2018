@@ -18,11 +18,17 @@ body {
     line-height: 1.6em;
     font-weight: 300;
     font-style: normal;
-    font-size: 15px; /* currently ems cause chrome bug misinterpreting rems on body element */
+    font-size: 16px; /* currently ems cause chrome bug misinterpreting rems on body element */
     text-transform: none;
     color: $not_black;
     @media only screen and (max-width: 515px) {
         font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    body{
+        font-size: 15px;
     }
 }
 
@@ -105,6 +111,7 @@ p{
 hr{
     border: none;
     position: relative;
+    margin: 3rem 0 4rem;
     &:after {
         content: "";
         display: block;

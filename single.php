@@ -11,6 +11,7 @@ $template               = 'single.twig';
 $context                = Timber::get_context();
 $post                   = Timber::query_post();
 $context['post']        = $post;
+$context['post']->blocks = $post->get_field('blocks');
 
 // $context['post']->blocks = $post->get_field('blocks');
 $context['body_class']  = 'page-single';

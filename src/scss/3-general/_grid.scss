@@ -1,5 +1,5 @@
 $grid-spacing-px: 10;
-$container-width: 1100;
+$container-width: 900;
 
 //----- Extends
 %clearfix:after {
@@ -78,9 +78,9 @@ div[class^='col-'], div[class*=' col-']{
 	}
 }
 
-$container-width: 1100;
+$container-width: 900;
 
-.container, .cb {
+.container {
 	max-width: $container-width + px;
 	margin: 0 auto;
   	@media only screen and (max-width: 1130px) {

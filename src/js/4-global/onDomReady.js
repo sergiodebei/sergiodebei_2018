@@ -7,10 +7,13 @@ $(document).on("ready", function () {
         slider = $('.slider').slick({
             infinite: true,
             autoplay: true,
-            autoplaySpeed: 5000,
+            // autoplaySpeed: 5000,
+            autoplaySpeed: 6000000,
             speed: 2000,
             prevArrow: $('.prev'),
-            nextArrow: $('.next')
+            nextArrow: $('.next'),
+            dots: false,
+            rows: 0,
         });
 
         // $('.next').click(function() {

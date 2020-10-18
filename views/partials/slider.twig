@@ -1,0 +1,38 @@
+    {# <div class="gallery">
+        <a href="#" class="control prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="control next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        <div class="slider">
+            <div><img src="http://127.0.0.1/sergiodebei/wp-content/uploads/2018/12/AS3A7444.jpg" alt=""></div>
+            <div><img src="{{post.thumbnail.src}}" alt=""></div>
+            <div><img src="{{post.thumbnail.src}}" alt=""></div>
+        </div>
+    </div> #}
+
+
+<div class="cb cb--imageslider">
+{% if block.images|length == 1 %}
+    {% if block.images[0] %}
+        {# <img {{ block.images[0].image.id|get_timber_image_responsive('slider') }}> #}
+        <img src="{{ TimberImage(block.images[0].image.sizes.slider) }}" alt="{{ image.image.alt }}" />
+    {% endif %}
+        {% else %}
+        <button type="button" class="control prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="control next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </button>
+        <div class="slider">
+            {% for image in block.images %}
+                {% if image.image %}
+                    {# <img {{ image.image.id|get_timber_image_responsive('slider') }}> #}
+                    <img src="{{ TimberImage(image.image.sizes.slider) }}" alt="{{ image.image.alt }}" />
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div> 

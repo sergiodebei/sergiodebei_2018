@@ -37,36 +37,36 @@
     .article_main_visual{
         margin: 0px 0px 30px;
     }
-    .gallery{
-        margin: 20px 0; 
-        position: relative;
-        .control{
-            position: absolute;
-            outline: none;
-            color: $white;
-            z-index: 2;
-            font-size: 30px; 
-            line-height: 30px;
-            background-color: rgba(0, 0, 0, 0.12);
-            padding: 10px;
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-            @include transition (.3s);
-            &.prev{
-                left: 0; 
-            }
-            &.next{
-                right: 0;
-            }
-            &:hover,&:focus{
-                background-color: rgba(0,0,0,.2);
-            }
-        }
-        img{
-            width: 100%; 
-        }
-    }
+    // .gallery, .cb--imageslider{
+    //     // margin: 20px 0; 
+    //     position: relative;
+    //     .control{
+    //         position: absolute;
+    //         outline: none;
+    //         color: $white;
+    //         z-index: 2;
+    //         font-size: 30px; 
+    //         line-height: 30px;
+    //         background-color: rgba(0, 0, 0, 0.12);
+    //         padding: 10px;
+    //         top: 50%;
+    //         -webkit-transform: translateY(-50%);
+    //         transform: translateY(-50%);
+    //         @include transition (.3s);
+    //         &.prev{
+    //             left: 0; 
+    //         }
+    //         &.next{
+    //             right: 0;
+    //         }
+    //         &:hover,&:focus{
+    //             background-color: rgba(0,0,0,.2);
+    //         }
+    //     }
+    //     img{
+    //         width: 100%; 
+    //     }
+    // }
 
     // iframe, img{
     //     margin: 20px auto;

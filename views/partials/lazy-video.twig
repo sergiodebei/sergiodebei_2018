@@ -1,0 +1,9 @@
+<div class="lazy-video {% if video_description %}lazy-video__alt{% endif %}"> 
+
+
+    <div class="lazy-video__preview {% if play_white %}lazy-video__preview--white{% endif %}" style="background-image: url({{ image|resize(cropx,cropy) }})">
+      {# <div class="lazy-video__icon"></div> #}
+    </div>
+    <noscript id="lazy-video" class="lazy-video__embed">{{ video }}</noscript>
+    <div class="lazy-video__description">{{video_description}}</div>
+</div>

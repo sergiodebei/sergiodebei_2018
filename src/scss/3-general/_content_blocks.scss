@@ -1,0 +1,117 @@
+.cb {
+    margin-top: 3rem !important;
+    .row{
+        [class^=col-] {
+            margin-right: 20px;
+        }
+        [class^=col-]:last-child {
+            margin-right: 0;
+        }
+    }
+    &--reverse{
+        .row{
+            display: flex;
+            flex-direction: row-reverse;
+            [class^=col-] {
+                margin-right: 0;
+            }
+            [class^=col-]:last-child {
+                margin-right: 3%;
+            }
+        }
+    }
+    &--text{
+        // text-align: center;
+        // p{
+        //     text-align: initial;
+        // }
+        .button{
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+    }
+    &--columns{
+        // .title{
+        //     margin-bottom: 1rem;
+        // }
+        .button{
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    &--fullwidth{
+        max-width: 100% !important;
+        img{
+            margin: auto;
+        }
+    }
+    &--fullvideo{
+
+    }
+    &--imageslider{
+        position: relative;
+        .control{
+            position: absolute;
+            outline: none;
+            color: $white;
+            z-index: 2;
+            font-size: 30px; 
+            line-height: 30px;
+            background-color: rgba(0, 0, 0, 0.12);
+            padding: 10px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            @include transition (.3s);
+            &.prev{
+                left: 0; 
+            }
+            &.next{
+                right: 0;
+            }
+            &:hover,&:focus{
+                background-color: rgba(0,0,0,.2);
+            }
+        }
+        img{
+            width: 100%; 
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .cb {
+        .row{
+            [class^=col-]{
+                margin: 0;
+                width: 100%;
+            }
+            [class^=col-]:last-child {
+                margin-top:2rem;
+            }
+        }
+        &--reverse{
+            .row{
+                [class^=col-]:last-child {
+                    margin-right: 0;
+                    margin-top:2rem;
+                }
+            }
+        }
+        &--fullwidth{
+            margin: 4rem 0 0 !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cb{
+        margin-top: 3rem !important; 
+        &--text{
+            text-align: initial;
+        }
+    }
+}
