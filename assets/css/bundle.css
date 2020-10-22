@@ -2992,6 +2992,7 @@ body.slick-open, body.menu-open {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background: #f0f0f0 url([object Module]) no-repeat 50%;
     background-size: 40% 40%;
     transition: 0.3s; }
     .controllers .control_single.totop {
@@ -2999,6 +3000,7 @@ body.slick-open, body.menu-open {
     .controllers .control_single.backto {
       transform: rotate(-180deg); }
     .controllers .control_single:hover {
+      background: rgba(175, 244, 213, 0.8) url([object Module]) no-repeat 50%;
       background-size: 40% 40%; }
   .controllers.visible {
     right: 20px; }

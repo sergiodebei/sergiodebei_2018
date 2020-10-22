@@ -7,13 +7,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
-//added
+// //added
 const AssetsPlugin = require('assets-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 //MODE
 const isDev = process.env.NODE_ENV === 'development';
+const getMode = (dev = isDev) => (dev ? 'development' : 'production');
 
 //PATH
 // const resourcesPath = path.resolve(__dirname, 'src/');
@@ -35,9 +36,81 @@ const paths = {
     appNodeModules: resolveApp('node_modules'),
 };
 
+const getModule = (dev = isDev) => {
+    const parser = {
+        parser: { requireEnsure: false },
+    }
+    const jsLoader = {
+        test: /\.[jt]sx?$/,
+        exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
+        loader: 'babel-loader',
+        include: paths.appSrc,
+    };
+
+    const styleLoader = {
+        test: /\.s?css$/,
+        exclude: /node_modules/,
+        use: [
+            MiniCssExtractPlugin.loader,
+            {
+                loader: "css-loader",
+            },
+            {
+                loader: "postcss-loader",
+                options: {
+                    ident: "postcss",
+                    plugins: () => [postcssPresetEnv()],
+                }
+            },
+            {
+                loader: 'sass-loader',
+                options: {
+                    importer: globImporter(),
+                },
+            },
+        ],
+    };
+
+    const imagesLoader = {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        exclude: /images/,
+        use: [
+            {
+                loader: 'url-loader',
+                options: isDev
+                    ? {}
+                    : {
+                        limit: 8192,
+                        name: 'fonts/[name]-[hash].[ext]',
+                    },
+            },
+        ],
+    };
+
+    const fontsLoader = {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        exclude: /images/,
+        use: [
+            {
+                loader: 'url-loader',
+                options: dev
+                    ? {}
+                    : {
+                        limit: 8192,
+                        name: 'fonts/[name]-[hash].[ext]',
+                    },
+            },
+        ],
+    };
+
+    return {
+        rules: [parser, jsLoader, styleLoader, imagesLoader, fontsLoader],
+    };
+};
+
 module.exports = {
     bail: !isDev,
-    mode: isDev ? 'development' : 'production',
+    mode: getMode(isDev),
     // We generate sourcemaps in production. This is slow but gives good results.
     // You can exclude the *.map files from the build during deployment.
     target: 'web',
@@ -47,71 +120,7 @@ module.exports = {
         path: paths.appBuild,
         filename: isDev ? 'js/bundle.js' : 'js/bundle.[hash:8].js'
     },
-    module: {
-        rules: [
-            // Disable require.ensure as it's not a standard language feature.
-            { parser: { requireEnsure: false } },
-            // Transform ES6 with Babel
-            {
-                test: /\.[jt]sx?$/,
-                exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
-                loader: 'babel-loader',
-                include: paths.appSrc,
-            },
-            {
-                test: /\.s?css$/,
-                exclude: /node_modules/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: "css-loader",
-                    },
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            ident: "postcss",
-                            plugins: () => [postcssPresetEnv()],
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            importer: globImporter(),
-                        },
-                    },
-                ],
-            },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: isDev
-                            ? {}
-                            : {
-                                limit: 8192,
-                                name: 'images/[name]-[hash].[ext]',
-                            },
-                    },
-                ],
-            },
-            {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                exclude: /images/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: isDev
-                            ? {}
-                            : {
-                                limit: 8192,
-                                name: 'fonts/[name]-[hash].[ext]',
-                            },
-                    },
-                ],
-            }
-        ],
-    },
+    module: getModule(isDev),
     optimization: {
         minimize: !isDev,
         minimizer: [
