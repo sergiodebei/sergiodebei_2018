@@ -1,3 +1,9 @@
+// Shared initializations
+import { getDevice } from './helpers/shared';
+setTimeout(() => {
+    getDevice();
+}, 50);
+
 
 import '../scss/style.scss';
 
