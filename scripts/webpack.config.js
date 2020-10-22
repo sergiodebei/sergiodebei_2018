@@ -35,7 +35,6 @@ const paths = {
     appNodeModules: resolveApp('node_modules'),
 };
 
-
 module.exports = {
     bail: !isDev,
     mode: isDev ? 'development' : 'production',
