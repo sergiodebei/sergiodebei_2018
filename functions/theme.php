@@ -108,7 +108,7 @@ class StarterSite extends TimberSite {
     }
 
     function enqueue_styles() {
-		wp_enqueue_script( 'my-css', get_template_directory_uri(). '/assets/dev/css/sergiodebei-main.css', false ); 
+		wp_enqueue_script( 'my-css', get_template_directory_uri(). '/assets/css/bundle.css', false ); 
 	}
     
     function enqueue_scripts() {
@@ -120,7 +120,7 @@ class StarterSite extends TimberSite {
         //         array(), '3.2.1', true
         //     );
         // }
-        wp_enqueue_script( 'my-js', get_template_directory_uri(). '/assets/dev/js/sergiodebei-main.js', false );
+        wp_enqueue_script( 'my-js', get_template_directory_uri(). '/assets/js/bundle.js', false );
     }
 
     function add_to_context( $context ) {

@@ -1,15 +1,12 @@
 const path = require("path");
-const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const globImporter = require("node-sass-glob-importer");
 const postcssPresetEnv = require("postcss-preset-env");
-// const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const ManifestPlugin = require("webpack-manifest-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === "development";
+console.log("process.env", __dirname);
 
 const publicPath = path.resolve(__dirname, "web/");
 const resourcesPath = path.resolve(__dirname, "src/");
@@ -93,9 +90,9 @@ const getModule = (dev = isDev) => {
         options: dev
           ? {}
           : {
-              limit: 8192,
-              name: "images/[name]-[hash].[ext]",
-            },
+            limit: 8192,
+            name: "images/[name]-[hash].[ext]",
+          },
       },
     ],
   };
@@ -109,9 +106,9 @@ const getModule = (dev = isDev) => {
         options: dev
           ? {}
           : {
-              limit: 8192,
-              name: "fonts/[name]-[hash].[ext]",
-            },
+            limit: 8192,
+            name: "fonts/[name]-[hash].[ext]",
+          },
       },
     ],
   };
@@ -147,29 +144,6 @@ const getOptimization = (dev = isDev) => {
   };
 };
 
-const getPlugins = (dev = isDev) => {
-  const plugins = [
-    new CleanWebpackPlugin(),
-    // new ForkTsCheckerWebpackPlugin(),
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
-    }),
-  ];
-
-  if (dev) {
-    return [...plugins, new webpack.HotModuleReplacementPlugin()];
-  }
-
-  return [
-    ...plugins,
-    new MiniCssExtractPlugin({ filename: "[name]-[hash].css" }),
-    new ManifestPlugin({
-      fileName: path.resolve(publicPath, "build/manifest.json"),
-      publicPath: "",
-    }),
-  ];
-};
-
 module.exports = (...args) => {
   const [dev, config] = args;
 
@@ -186,7 +160,6 @@ module.exports = (...args) => {
       },
     },
     devServer: getDevServer(dev, config),
-    plugins: getPlugins(dev),
     optimization: getOptimization(dev),
   };
 };

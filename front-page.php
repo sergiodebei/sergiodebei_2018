@@ -18,9 +18,9 @@ $context['skills'] = get_field('skill');
 $context['events'] = get_field('timeline_event');
 $context['work'] = get_field('work');
 
-// $context['projects']    = Timber::get_posts( 
-//   [ 
-//     'post_type'   => 'projects', 
+// $context['projects']    = Timber::get_posts(
+//   [
+//     'post_type'   => 'projects',
 //     'orderby'     => 'menu_order',
 //     'order'       => 'ASC',
 //     'numberposts' => '-1'

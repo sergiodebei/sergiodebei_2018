@@ -20,7 +20,7 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        background: rgba(240, 240, 240, 1) url("../img/arrow_black.svg") no-repeat 50%;
+        // background: rgba(240, 240, 240, 1) url("../img/arrow_black.svg") no-repeat 50%;
         background-size: 40% 40%;
         @include transition (.3s);
         &.totop{
@@ -38,7 +38,7 @@
             transform: rotate(-180deg);
         }
         &:hover{
-            background: $mint_opacity url("../img/arrow_black.svg") no-repeat 50%;
+            // background: $mint_opacity url("../img/arrow_black.svg") no-repeat 50%;
             background-size: 40% 40%;
         }
     }
@@ -51,9 +51,9 @@
 }
 
 @media only screen and (max-width: 515px) {
-    
+
     .controllers {
-        bottom: 90px; 
+        bottom: 90px;
     }
 
 }
