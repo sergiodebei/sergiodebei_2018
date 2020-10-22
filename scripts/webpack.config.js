@@ -36,7 +36,6 @@ const paths = {
 };
 
 
-
 module.exports = {
     bail: !isDev,
     mode: isDev ? 'development' : 'production',
